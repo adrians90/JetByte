@@ -1,4 +1,5 @@
 import Sidebar from "@/components/Sidebar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 
@@ -13,6 +14,7 @@ const layout = ({ children }) => {
         >
           <FaBarsStaggered className="w-8 h-8 text-lime-500 cursor-pointer hover:text-lime-300" />
         </label>
+
         <div className="bg-slate-950 px-8 py-12 min-h-screen">{children}</div>
       </div>
       <div className="drawer-side">
