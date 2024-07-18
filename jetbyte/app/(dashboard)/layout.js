@@ -1,5 +1,4 @@
 import Sidebar from "@/components/Sidebar";
-import { ClerkProvider } from "@clerk/nextjs";
 
 import { FaBarsStaggered } from "react-icons/fa6";
 
