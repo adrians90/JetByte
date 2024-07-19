@@ -14,7 +14,9 @@ const layout = ({ children }) => {
           <FaBarsStaggered className="w-8 h-8 text-fuchsia-500 cursor-pointer hover:text-fuchsia-400" />
         </label>
 
-        <div className="bg-slate-950 px-8 py-12 min-h-screen">{children}</div>
+        <div className="bg-slate-950 flex md:flex items-center md:flex-col px-5 md:px-8 py-12 min-h-screen lg:bg-gradient-to-l from-slate-900">
+          {children}
+        </div>
       </div>
       <div className="drawer-side">
         <label

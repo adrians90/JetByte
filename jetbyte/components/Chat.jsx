@@ -29,18 +29,28 @@ const Chat = () => {
     setText("");
   };
   return (
-    <div className="min-h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto]">
+    <div className="min-h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto] max-w-7xl relative">
       <div>
+        {messages.length === 0 && (
+          <p className="text-2xl text-slate-50/60">
+            Start a conversation with{" "}
+            <span className="text-slate-50/90">Jet</span>
+            <span className="text-fuchsia-500 italic">Byte</span>
+            <span className="text-fuchsia-500 animate-ping">__</span>
+          </p>
+        )}
         {messages.map(({ role, content }, index) => {
           const avatar = role == "user" ? "👤" : <SiOpenaigym />;
           const bcg = role === "user" ? "bg-slate-900" : "bg-slate-950";
           return (
             <div
               key={index}
-              className={`${bcg} flex items-center py-6 -mx-8 px-8 text-xl leading-loose border-b rounded-md border-slate-900`}
+              className={`${bcg} flex text-slate-50/70 hover:text-slate-50/90 items-center py-6 -mx-8 px-5 text-xl leading-loose border-b rounded-xl border-slate-900`}
             >
-              <span className="mr-4">{avatar}</span>
-              <p className="max-w-3xl text-slate-50/90">{content}</p>
+              <div className="mr-4">{avatar}</div>
+              <p className="max-w-3xl text-slate-50/70 hover:text-slate-50/90">
+                {content}
+              </p>
             </div>
           );
         })}
@@ -48,8 +58,8 @@ const Chat = () => {
           <span className="loading text-slate-50/90 text-3xl"></span>
         ) : null}
       </div>
-      <form onSubmit={handleSubmit} className="max-w-4xl pt-12">
-        <div className="join w-full md:mb-9">
+      <form onSubmit={handleSubmit} className="w-full pt-12">
+        <div className="join md:mb-9 w-full">
           <input
             type="text"
             placeholder="Message JetByte..."

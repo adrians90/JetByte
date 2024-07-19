@@ -12,7 +12,7 @@ const MemberProfile = async () => {
   const user = await currentUser();
   //   const { userId } = auth();
   return (
-    <div className="px-4 flex flex-col items-center gap-2 p-8">
+    <section className="px-4 flex flex-col items-center gap-2 p-8">
       <div className="flex justify-center gap-2">
         <SignedIn>
           <UserButton afterSignOutUrl="/" />
@@ -22,12 +22,12 @@ const MemberProfile = async () => {
         </SignedOut>
 
         <p className="text-slate-50/60 hover:text-slate-50">
-          {user?.emailAddresses[0].emailAddress}
+          {user?.emailAddresses[0]?.emailAddress}
         </p>
       </div>
 
       <SignOutButton className="font-bold transition:all text-slate-50/60 hover:text-slate-50" />
-    </div>
+    </section>
   );
 };
 

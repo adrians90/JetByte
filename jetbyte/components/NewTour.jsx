@@ -8,7 +8,7 @@ import {
   createNewTour,
 } from "@/utils/actions";
 
-import TourInfo from "./TourInfo";
+import TourInfo from "@/components/TourInfo";
 import toast from "react-hot-toast";
 
 const NewTour = () => {
@@ -19,6 +19,7 @@ const NewTour = () => {
   } = useMutation({
     mutationFn: async (destination) => {
       const newTour = await generateTourResponse(destination);
+
       if (newTour) {
         return newTour;
       }
@@ -40,10 +41,11 @@ const NewTour = () => {
     <>
       <form onSubmit={handleSubmit} className="max-w-2xl">
         <h2 className="mb-4 font-bold text-slate-50/90">
-          Select your dream destination
+          Ask JetByte to generate a tour for you
+          <span className="text-fuchsia-500 animate-ping transition">__</span>
         </h2>
 
-        <div className="join w-full">
+        <div className="join min-w-full mt-auto">
           <input
             type="text"
             className="input input-bordered join-item w-full"
@@ -58,8 +60,12 @@ const NewTour = () => {
             name="country"
             required
           ></input>
-          <button className="btn text-slate-950 font-bold transition:all hover:bg-fuchsia-400 bg-fuchsia-500 join-item">
-            Generate Tour
+          <button
+            type="submit"
+            disabled={isPending}
+            className="btn text-slate-950 font-bold transition:all hover:bg-fuchsia-400 bg-fuchsia-500 join-item"
+          >
+            {isPending ? "Please wait..." : "Generate Tour"}
           </button>
         </div>
       </form>
