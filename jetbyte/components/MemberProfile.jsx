@@ -12,7 +12,7 @@ const MemberProfile = async () => {
   const user = await currentUser();
   //   const { userId } = auth();
   return (
-    <div className="px-4 flex flex-col items-center gap-2 border rounded-md border-slate-800 p-8">
+    <div className="px-4 flex flex-col items-center gap-2 p-8">
       <div className="flex justify-center gap-2">
         <SignedIn>
           <UserButton afterSignOutUrl="/" />
@@ -23,9 +23,9 @@ const MemberProfile = async () => {
 
         <p>{user?.emailAddresses[0].emailAddress}</p>
       </div>
-      <button className="btn border hover:text-lime-400 transition:all border-lime-500 text-lime-500 bg-slate-900">
+      <div className="btn border text-slate-950 font-bold transition:all hover:bg-fuchsia-400 bg-fuchsia-500">
         <SignOutButton />
-      </button>
+      </div>
     </div>
   );
 };

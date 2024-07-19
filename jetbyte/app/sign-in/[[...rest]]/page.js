@@ -4,10 +4,10 @@ import Link from "next/link";
 const SignInPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-slate-950">
-      <SignIn routing="hash" />
+      <SignIn />
 
       <Link
-        className="mt-14 btn border hover:text-lime-400 transition:all border-lime-500 text-lime-500 bg-slate-950"
+        className="mt-14 btn border text-slate-950 font-bold transition:all hover:bg-fuchsia-400 bg-fuchsia-500"
         href="/"
       >
         Back to homepage

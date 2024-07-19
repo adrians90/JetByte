@@ -11,7 +11,7 @@ const layout = ({ children }) => {
           htmlFor="my-drawer-2"
           className="drawer-button lg:hidden fixed top-6 right-6"
         >
-          <FaBarsStaggered className="w-8 h-8 text-lime-500 cursor-pointer hover:text-lime-300" />
+          <FaBarsStaggered className="w-8 h-8 text-fuchsia-500 cursor-pointer hover:text-fuchsia-400" />
         </label>
 
         <div className="bg-slate-950 px-8 py-12 min-h-screen">{children}</div>

@@ -4,7 +4,7 @@ import SidebarHeader from "./SidebarHeader";
 
 const Sidebar = () => {
   return (
-    <div className="text-slate-50 px-4 w-80 min-h-full bg-slate-900 py-12 grid grid-rows-[auto,1fr,auto]">
+    <div className="text-slate-50 px-4 w-80 min-h-full bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 py-12 grid grid-rows-[auto,1fr,auto]">
       <SidebarHeader />
       <NavLinks />
       <MemberProfile />
