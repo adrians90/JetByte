@@ -21,12 +21,12 @@ const MemberProfile = async () => {
           <SignInButton />
         </SignedOut>
 
-        <p className="text-slate-50/60">
+        <p className="text-slate-50/60 hover:text-slate-50">
           {user?.emailAddresses[0].emailAddress}
         </p>
       </div>
 
-      <SignOutButton className="btn text-slate-950 font-bold transition:all hover:bg-fuchsia-400 bg-fuchsia-500" />
+      <SignOutButton className="font-bold transition:all text-slate-50/60 hover:text-slate-50" />
     </div>
   );
 };
