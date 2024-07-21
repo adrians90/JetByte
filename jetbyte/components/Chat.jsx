@@ -29,14 +29,14 @@ const Chat = () => {
     setText("");
   };
   return (
-    <div className="min-h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto] max-w-7xl relative">
+    <div className="min-h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto] min-w-full box-border">
       <div>
         {messages.length === 0 && (
           <p className="text-2xl text-slate-50/60">
             Start a conversation with{" "}
             <span className="text-slate-50/90">Jet</span>
             <span className="text-fuchsia-500 italic">Byte</span>
-            <span className="text-fuchsia-500 animate-ping">__</span>
+            <span className="text-fuchsia-500 animate-ping">_</span>
           </p>
         )}
         {messages.map(({ role, content }, index) => {
@@ -45,7 +45,7 @@ const Chat = () => {
           return (
             <div
               key={index}
-              className={`${bcg} flex text-slate-50/70 hover:text-slate-50/90 items-center py-6 -mx-8 px-5 text-xl leading-loose border-b rounded-xl border-slate-900`}
+              className={`${bcg} flex text-slate-50/70 hover:text-slate-50/90 items-center py-6 px-5 w-full text-xl leading-loose border-b rounded-xl border-slate-900`}
             >
               <div className="mr-4">{avatar}</div>
               <p className="max-w-3xl text-slate-50/70 hover:text-slate-50/90">
@@ -55,11 +55,11 @@ const Chat = () => {
           );
         })}
         {isPending ? (
-          <span className="loading text-slate-50/90 text-3xl"></span>
+          <span className="loading text-fuchsia-500 loading-lg"></span>
         ) : null}
       </div>
-      <form onSubmit={handleSubmit} className="w-full pt-12">
-        <div className="join md:mb-9 w-full">
+      <form onSubmit={handleSubmit} className="pt-12">
+        <div className="join md:mb-9 w-full lg:max-w-7xl">
           <input
             type="text"
             placeholder="Message JetByte..."

@@ -1,7 +1,7 @@
 const TourInfo = ({ tour }) => {
   const { title, description, stops } = tour;
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-7xl">
       <h1 className="text-4xl font-semibold mb-4 text-slate-50/90">{title}:</h1>
       <p className="leading-loose text-lg mb-6 text-slate-50/90">
         {description}

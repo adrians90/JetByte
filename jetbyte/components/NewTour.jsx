@@ -34,17 +34,19 @@ const NewTour = () => {
     mutate(destination);
   };
 
-  if (isPending) {
-    return <span className="loading loading-lg"></span>;
-  }
   return (
-    <>
-      <form onSubmit={handleSubmit} className="max-w-2xl">
-        <h2 className="mb-4 font-bold text-slate-50/90">
-          Ask JetByte to generate a tour for you
-          <span className="text-fuchsia-500 animate-ping transition">__</span>
-        </h2>
-
+    <div className="min-h-[calc(100vh-6rem)] grid grid-rows-[auto,3fr,auto] min-w-full box-border">
+      <p className="text-slate-50/60 text-2xl">
+        Ask <span className="text-slate-50/90">Jet</span>
+        <span className="text-fuchsia-500 italic">Byte</span> to generate a tour
+        for you
+        <span className="text-fuchsia-500 animate-ping">_</span>
+      </p>
+      {isPending && (
+        <span className="loading loading-lg text-fuchsia-500"></span>
+      )}
+      <div className="mt-16">{tour ? <TourInfo tour={tour} /> : null}</div>
+      <form onSubmit={handleSubmit} className="w-full lg:max-w-7xl md:mb-9">
         <div className="join min-w-full mt-auto">
           <input
             type="text"
@@ -69,8 +71,8 @@ const NewTour = () => {
           </button>
         </div>
       </form>
-      <div className="mt-16">{tour ? <TourInfo tour={tour} /> : null}</div>
-    </>
+      {/* <div className="mt-16">{tour ? <TourInfo tour={tour} /> : null}</div> */}
+    </div>
   );
 };
 
