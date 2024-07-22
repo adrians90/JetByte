@@ -16,9 +16,13 @@ export const generateChatResponse = async (chatMessages) => {
       ],
       model: "gpt-3.5-turbo",
       temperature: 0,
+      max_tokens: 300,
     });
 
-    return response.choices[0].message;
+    return {
+      message: response.choices[0].message,
+      tokens: response.usage.total_tokens,
+    };
   } catch (error) {
     return null;
   }
@@ -47,7 +51,7 @@ export const generateTourResponse = async ({ city, country }) => {
       ],
       model: "gpt-3.5-turbo",
       temperature: 0,
-      max_tokens: 250,
+      max_tokens: 300,
     });
 
     const tourData = JSON.parse(response.choices[0].message.content);
@@ -55,7 +59,7 @@ export const generateTourResponse = async ({ city, country }) => {
     if (!tourData.tour) {
       return null;
     }
-    return tourData.tour;
+    return { tour: tourData.tour, tokens: response.usage.total_tokens };
   } catch (error) {
     console.log(error);
     return null;
