@@ -22,7 +22,10 @@ const SingleTourPage = async ({ params }) => {
   //   });
   return (
     <div>
-      <Link href="/tours" className="btn btn-secondary mb-12">
+      <Link
+        href="/tours"
+        className="btn border text-slate-950 font-bold transition:all hover:bg-fuchsia-400 bg-fuchsia-500 mb-12"
+      >
         Back to tours
       </Link>
       {tourImage ? (

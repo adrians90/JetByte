@@ -36,7 +36,7 @@ export const generateTourResponse = async ({ city, country }) => {
         "country": "${country}",
         "title": "A day in ${city}",
         "description": "Description of the ${city} and tour",
-        "stops": ["short paragraph on the first stop", "short paragraph on the second stop", "short paragraph on the third stop"]
+        "stops": ["very short paragraph on stop 1", "very short paragraph on stop 1", "very short paragraph on stop 1"]
     }
   
   }
