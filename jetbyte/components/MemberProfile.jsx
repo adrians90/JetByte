@@ -1,3 +1,4 @@
+import { fetchOrGenerateTokens } from "@/utils/actions";
 import {
   SignedOut,
   SignInButton,
@@ -6,11 +7,13 @@ import {
   SignOutButton,
 } from "@clerk/nextjs";
 
-import { currentUser } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 
 const MemberProfile = async () => {
   const user = await currentUser();
-  //   const { userId } = auth();
+  const { userId } = auth();
+
+  await fetchOrGenerateTokens(userId);
   return (
     <section className="px-4 flex flex-col items-center gap-2 p-8">
       <div className="flex justify-center gap-2">
