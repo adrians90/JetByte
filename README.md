@@ -12,7 +12,7 @@ https://jetbyte.vercel.app/
 
 To run locally: npm install, npm run dev
 
-To create an account, please sign up with google or choose email and password.
+To create an account, please sign up with google or choose email and password
 
 
 
